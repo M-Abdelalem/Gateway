@@ -13,7 +13,7 @@ namespace ProductApi.Controllers
             _logger = logger;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
+        [HttpGet]
         public IEnumerable<Product> Get()
         {
             return Enumerable.Range(1, 5).Select(index => new Product
@@ -23,6 +23,31 @@ namespace ProductApi.Controllers
                   Name="food"
             })
             .ToArray();
+        }
+        [HttpGet]
+        [Route("{id}")]
+        public Product GetById(int id)
+        {
+            return new Product
+            {
+                Date = DateTime.Now,
+                id = id,
+                Name = "food"
+            }
+            ;
+        }
+        [HttpPost]
+        public bool Post(Product product)
+        {
+            try
+            {
+                _logger.LogInformation("save product:" + product.Name);
+                return true;
+            }
+            catch(Exception ex)
+            {
+                return false;
+            }
         }
     }
 }

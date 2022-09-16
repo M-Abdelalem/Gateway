@@ -13,7 +13,7 @@ namespace OrderApi.Controllers
             _logger = logger;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
+        [HttpGet]
         public IEnumerable<Order> Get()
         {
             return Enumerable.Range(1, 5).Select(index => new Order
@@ -24,6 +24,30 @@ namespace OrderApi.Controllers
 
             })
             .ToArray();
+        }
+        [HttpGet]
+        [Route("{id}")]
+        public Order GetById(int id)
+        {
+            return  new Order
+            {
+                Date = DateTime.Now,
+                cost = 100,
+                id = id
+            }
+            ;
+        }
+        [HttpPost]
+        public bool Post(Order order)
+        {
+            try
+            {
+                _logger.LogInformation("save order:" + order.id);
+                return true;
+            }catch(Exception ex)
+            {
+                return false;
+            }
         }
     }
 }
