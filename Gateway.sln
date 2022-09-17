@@ -3,13 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderApi", "order\OrderApi.csproj", "{CDEEA7CB-6703-4ECB-9933-A03E66AA8A06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderApi", "order\OrderApi.csproj", "{CDEEA7CB-6703-4ECB-9933-A03E66AA8A06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductApi", "product\ProductApi.csproj", "{94E4AE2F-F72F-415B-9879-F61659524A6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductApi", "product\ProductApi.csproj", "{94E4AE2F-F72F-415B-9879-F61659524A6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OcelotApi", "OcelotApi\OcelotApi.csproj", "{ED45A4CF-189F-4642-B0B9-CDCF4827784C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OcelotApi", "OcelotApi\OcelotApi.csproj", "{ED45A4CF-189F-4642-B0B9-CDCF4827784C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RequestAggregationOcelot", "RequestAggregationOcelot\RequestAggregationOcelot.csproj", "{D46598BF-31DC-451C-AA65-1918B0C60549}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RequestAggregationOcelot", "RequestAggregationOcelot\RequestAggregationOcelot.csproj", "{D46598BF-31DC-451C-AA65-1918B0C60549}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Consul", "Consul", "{B4FB1167-F03B-4A3E-89BC-C6CE29909103}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OcelotConsul", "Consul\OcelotConsul\OcelotConsul.csproj", "{92C3A745-E2E7-4CAC-AEB8-279215D9CA68}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderApi", "Consul\order\OrderApi.csproj", "{12419A80-474D-48E2-A5A9-78C75FB079E7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductApi", "Consul\product\ProductApi.csproj", "{61BCE8C4-DE11-408B-9AFB-DAD9FDA99821}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +41,26 @@ Global
 		{D46598BF-31DC-451C-AA65-1918B0C60549}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D46598BF-31DC-451C-AA65-1918B0C60549}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D46598BF-31DC-451C-AA65-1918B0C60549}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92C3A745-E2E7-4CAC-AEB8-279215D9CA68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92C3A745-E2E7-4CAC-AEB8-279215D9CA68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92C3A745-E2E7-4CAC-AEB8-279215D9CA68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92C3A745-E2E7-4CAC-AEB8-279215D9CA68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12419A80-474D-48E2-A5A9-78C75FB079E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12419A80-474D-48E2-A5A9-78C75FB079E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12419A80-474D-48E2-A5A9-78C75FB079E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12419A80-474D-48E2-A5A9-78C75FB079E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61BCE8C4-DE11-408B-9AFB-DAD9FDA99821}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61BCE8C4-DE11-408B-9AFB-DAD9FDA99821}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61BCE8C4-DE11-408B-9AFB-DAD9FDA99821}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61BCE8C4-DE11-408B-9AFB-DAD9FDA99821}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{92C3A745-E2E7-4CAC-AEB8-279215D9CA68} = {B4FB1167-F03B-4A3E-89BC-C6CE29909103}
+		{12419A80-474D-48E2-A5A9-78C75FB079E7} = {B4FB1167-F03B-4A3E-89BC-C6CE29909103}
+		{61BCE8C4-DE11-408B-9AFB-DAD9FDA99821} = {B4FB1167-F03B-4A3E-89BC-C6CE29909103}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6B542004-3BA1-4712-A307-7F8EE72DE236}
