@@ -1,0 +1,66 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/Order",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 2222
+        },
+        {
+          "Host": "localhost",
+          "Port": 1111
+        }
+      ],
+      "UpstreamPathTemplate": "/orderapi",
+      "UpstreamHttpMethod": [ "Get" ],
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/Order/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 1111
+        },
+        {
+          "Host": "localhost",
+          "Port": 2222
+        }
+      ],
+      "UpstreamPathTemplate": "/orderapi/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/Order",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 1111
+        },
+        {
+          "Host": "localhost",
+          "Port": 2222
+        }
+      ],
+      "UpstreamPathTemplate": "/orderapi",
+      "UpstreamHttpMethod": [ "Post" ],
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      }
+    }
+
+  ],
+  //"LoadBalancer": "LeastConnection",
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:7187"
+  }
+}
